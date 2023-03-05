@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace should not be null -->
+<mapper namespace="com.yiwen.mapper.UserMapper">
+    <!--id: is the only identifier of this query
+        resultType: the return data type, it should be a class
+    -->
+    <select id="selectAll" resultType="com.yiwen.pojo.User">
+        select * from tb_user;
+    </select>
+    <select id="selectById" resultType="com.yiwen.pojo.User">
+        from tb_user where id = #{id};
+    </select>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--so that we can use the partial name of the class-->
+    <typeAliases>
+        <package name="com.yiwen.pojo"/>
+    </typeAliases>
+    <!--set the connection environment, and use the default setting environment-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--connection info-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="HWyy19980315w"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--SQL mapping file source(where you assign all the querying code) -->
+    <mappers>
+<!--        <mapper resource="com/yiwen/mapper/userMapper.xml"/>-->
+        <!--package scan could avoid assigning the path-->
+        <package name="com.yiwen.mapper"/>
+    </mappers>
+</configuration>
