@@ -103,4 +103,81 @@ public class MyBatisTest {
         //5. release resource
         sqlSession.close();
     }
+
+    @Test
+    public void testAdd() throws IOException{
+        //0. get id variable
+        String companyName = "Unif";
+        String brandName = "Unif Inc.";
+        String description = "fashion brand";
+        int ordered = 1000;
+        int status = 1;
+
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompany_name(companyName);
+        brand.setBrandName(brandName);
+        brand.setDescription(description);
+        brand.setOrdered(ordered);
+
+        //1. get sqlsessionfactory
+        String resource = "mybatis.config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2. get sqlsession instance
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //3. mapper interface
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        brandMapper.add(brand);
+        System.out.println(brand.getId());
+
+        //if doesn't set the auto commit to true
+        //needs to manually commit
+        //sqlSession.commit();
+
+        //5. release resource
+        sqlSession.close();
+    }
+
+    @Test
+    public void testUpdate() throws IOException{
+        //0. get id variable
+        String companyName = "Unif";
+        String brandName = "Unif Inc.";
+        String description = "fashion brand";
+        int ordered = 1000;
+        int status = 1;
+
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setCompany_name(companyName);
+        brand.setBrandName(brandName);
+        brand.setDescription("teenager fashion company");
+        brand.setOrdered(ordered);
+        brand.setId(7);
+
+        //1. get sqlsessionfactory
+        String resource = "mybatis.config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2. get sqlsession instance
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //3. mapper interface
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        brandMapper.update(brand);
+        Brand res = brandMapper.selectById(brand.getId());
+        System.out.println(res);
+        //if doesn't set the auto commit to true
+        //needs to manually commit
+        //sqlSession.commit();
+
+        //5. release resource
+        sqlSession.close();
+    }
 }
