@@ -7,11 +7,18 @@ import java.util.List;
 import java.util.Map;
 
 public interface BrandMapper {
+    /*
+    * return all brands
+    * */
     List<Brand> selectAll();
 
-    Brand selectById(int id);
     /*
-    * three ways to get params
+    * return with certain ID
+    * */
+    Brand selectById(int id);
+
+    /*
+    * Dynamic query using three params
     * */
     List<Brand> selectByCondition(@Param("status")int status,
                                   @Param("companyName")String companyName,
@@ -19,4 +26,11 @@ public interface BrandMapper {
 
     List<Brand> selectByCondition(Brand brand);
     List<Brand> selectByCondition(Map map);
+
+    /*
+    * add a new brand to the database
+    * */
+    void add(Brand brand);
+
+    void update(Brand brand);
 }
