@@ -4,7 +4,7 @@ public class Brand {
     private int id;
     private String brandName;
     private String companyName;
-    private int order;
+    private int ordered;
     private String description;
     private int status;
 
@@ -32,12 +32,12 @@ public class Brand {
         this.companyName = company_name;
     }
 
-    public int getOrder() {
-        return order;
+    public int getOrdered() {
+        return ordered;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    public void setOrdered(int ordered) {
+        this.ordered = ordered;
     }
 
     public String getDescription() {
@@ -62,7 +62,7 @@ public class Brand {
                 "id=" + id +
                 ", brand_name='" + brandName + '\'' +
                 ", company_name='" + companyName + '\'' +
-                ", order=" + order +
+                ", order=" + ordered +
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 '}';
