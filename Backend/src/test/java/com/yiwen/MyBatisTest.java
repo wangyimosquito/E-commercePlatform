@@ -152,11 +152,11 @@ public class MyBatisTest {
         int status = 1;
 
         Brand brand = new Brand();
-        brand.setStatus(status);
-        brand.setCompany_name(companyName);
-        brand.setBrandName(brandName);
-        brand.setDescription("teenager fashion company");
-        brand.setOrdered(ordered);
+//        brand.setStatus(status);
+//        brand.setCompany_name(companyName);
+//        brand.setBrandName(brandName);
+//        brand.setDescription("quick sold fashion company");
+        brand.setOrdered(4000);
         brand.setId(7);
 
         //1. get sqlsessionfactory
@@ -176,6 +176,59 @@ public class MyBatisTest {
         //if doesn't set the auto commit to true
         //needs to manually commit
         //sqlSession.commit();
+
+        //5. release resource
+        sqlSession.close();
+    }
+
+
+    @Test
+    public void testDeleteByID() throws IOException{
+        //0. get id variable
+        int id = 8;
+
+        //1. get sqlsessionfactory
+        String resource = "mybatis.config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2. get sqlsession instance
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //3. mapper interface
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        brandMapper.deleteById(8);
+
+        //if doesn't set the auto commit to true
+        //needs to manually commit
+        sqlSession.commit();
+
+        //5. release resource
+        sqlSession.close();
+    }
+
+    @Test
+    public void testDeleteByIDs() throws IOException{
+        //0. get id variable
+        int[] ids = new int[]{8,9};
+
+        //1. get sqlsessionfactory
+        String resource = "mybatis.config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2. get sqlsession instance
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //3. mapper interface
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        brandMapper.deleteByIds(ids);
+
+        //if doesn't set the auto commit to true
+        //needs to manually commit
+        sqlSession.commit();
 
         //5. release resource
         sqlSession.close();

@@ -32,5 +32,19 @@ public interface BrandMapper {
     * */
     void add(Brand brand);
 
+    /*
+    * alter the field of each record
+    * */
     void update(Brand brand);
+
+    /*
+    * delete one record by its ID
+    * */
+    void deleteById(int id);
+
+    /*
+    * batach delete
+    * */
+    void deleteByIds(@Param("ids") int[] ids);
+
 }
