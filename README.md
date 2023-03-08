@@ -14,3 +14,7 @@ Full stacks e-Commerce Platform
 ## Current Porgress
 1. Update tomcat server
 2. Update part of Servlet function
+
+## Current Problem
+1. How to put tother each module and make them work together?
+2. How to containerize at least the back end part and the front end part.
