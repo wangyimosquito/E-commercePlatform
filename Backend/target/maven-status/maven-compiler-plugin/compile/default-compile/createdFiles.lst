@@ -1,1 +1,6 @@
-org\example\Main.class
+com\yiwen\mapper\BrandMapper.class
+com\yiwen\pojo\MyBatisDemo.class
+com\yiwen\pojo\User.class
+com\yiwen\pojo\Brand.class
+com\yiwen\mapper\UserMapper.class
+com\yiwen\pojo\MyBatisDemo2.class

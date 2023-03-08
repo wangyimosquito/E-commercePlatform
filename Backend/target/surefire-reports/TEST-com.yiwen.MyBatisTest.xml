@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="TestMaven" time="0" errors="0" skipped="0">
+<testsuite tests="7" failures="0" name="com.yiwen.MyBatisTest" time="1.009" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.3.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,5 +63,11 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestMaven" name="test" time="0"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testDeleteByIDs" time="0.758"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testAdd" time="0.052"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testDeleteByID" time="0.034"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testSelectByCondiation" time="0.055"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testUpdate" time="0.039"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testSeletAll" time="0.035"/>
+  <testcase classname="com.yiwen.MyBatisTest" name="testSelectById" time="0.036"/>
 </testsuite>
