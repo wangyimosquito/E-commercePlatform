@@ -1,7 +1,7 @@
 # E-commercePlatform
 Full stacks e-Commerce Platform
 
-## Current Progress
+## Finished
 1. Build local MySQL database.
 2. Use Apache MyBatis as the JDBC tools.
   + selectAll()
@@ -10,3 +10,7 @@ Full stacks e-Commerce Platform
   + add()
   + update()
 3. Build test for each function.
+
+## Current Porgress
+1. Update tomcat server
+2. Update part of Servlet function
