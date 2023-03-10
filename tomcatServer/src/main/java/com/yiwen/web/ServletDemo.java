@@ -4,11 +4,13 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet("/demo1")
+@WebServlet(urlPatterns = "/demo1", loadOnStartup = 1)
 public class ServletDemo implements Servlet {
+    private ServletConfig config;
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-
+        this.config = servletConfig;
+        System.out.println("...init....");
     }
 
     @Override
@@ -28,6 +30,8 @@ public class ServletDemo implements Servlet {
 
     @Override
     public void destroy() {
-
+        System.out.println("destroy ....");
     }
+
+
 }
