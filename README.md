@@ -10,10 +10,10 @@ Full stacks e-Commerce Platform
   + add()
   + update()
 3. Build test for each function.
+4. Update Tomcat server as the backend server for http requests.
 
 ## Current Porgress
-1. Update tomcat server
-2. Update part of Servlet function
+1. Update part of Servlet function
 
 ## Current Problem
 1. How to put tother each module and make them work together?
