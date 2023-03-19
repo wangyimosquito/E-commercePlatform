@@ -1,4 +1,4 @@
-package com.yiwen.web;
+package com.yiwen.web.request;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

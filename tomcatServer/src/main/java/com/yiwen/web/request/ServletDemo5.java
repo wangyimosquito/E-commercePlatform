@@ -1,4 +1,4 @@
-package com.yiwen.web;
+package com.yiwen.web.request;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +14,7 @@ import java.util.Map;
 public class ServletDemo5 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
         Map<String, String[]> map = req.getParameterMap();
         for (String s : map.keySet()) {
             System.out.print(s+":");
